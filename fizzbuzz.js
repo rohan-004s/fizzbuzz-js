@@ -2,33 +2,30 @@
 
 // Here, we create our main function.
 function fizzbuzz() {
-    
-    console.log('Welcome to FizzBuzz!');
 
+    for (let count = 1; count<=100; count++) {
+        let string = "";
 
-
-    for (let i = 1; i<=100; i++) {
-        if (i%3 === 0){
-            if (i%5 == 0){
-                console.log("FizzBuzz");
-            } else if (i%7===0){
-                console.log(i + ": FizzBang")
-            }else{
-                console.log("Fizz");
-            }
-
-        } else if (i%5 === 0){
-            if (i%3 == 0){
-                console.log("FizzBuzz");
-            }else{
-                console.log("Buzz");
-            }
-        } else if (i%7===0){
-            console.log("Bang")
-        }else{
-            console.log(i)
+        if (count%3 === 0){
+            string += "Fizz";
         }
-    } 
+        if (count%13===0){
+            string="Fezz"
+        }
+        if (count%11 === 0){
+            string+="Bong";
+        }
+        if (count%5 ===0 && count%11 !=0){
+            string+="Buzz";
+        }
+        if (count%7 === 0 && count%11 !=0 && count%5 !=0){
+            string+="Bang";
+        }
+        if (string === ""){
+            string = count;
+        }
+        console.log(`${string}`);
+    }
 }
 
   
